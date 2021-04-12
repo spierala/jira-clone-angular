@@ -1,4 +1,4 @@
-# A simplified Jira clone built with Angular, Akita and ng-zorro
+# A simplified Jira clone built with Angular, Akita and ng-zorro (Refactored to [MiniRx Store](https://github.com/spierala/mini-rx-store) - The RxJS Redux Store)
 
 > Phase two will not be completed as planned. Both [Chau Tran][chau] and I was too busy with some other commitments. View our [working in progress Graph QL branch][gql].
 >
