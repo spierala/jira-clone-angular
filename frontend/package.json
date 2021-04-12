@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod=true --sourceMap=true",
+    "build:stats": "ng build --prod=true --named-chunks --stats-json",
     "test": "ng test",
     "test-cover": "ng test --code-coverage --source-map=false",
     "lint": "ng lint",
@@ -88,7 +89,8 @@
     "tailwindcss": "^1.4.6",
     "ts-node": "~9.1.1",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.3"
+    "typescript": "~4.0.3",
+    "webpack-bundle-analyzer": "^4.4.0"
   },
   "husky": {
     "hooks": {

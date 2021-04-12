@@ -14,7 +14,8 @@
     "build": "npm run install-dependencies && npm run build:back && npm run build:front",
     "heroku-postbuild": "npm run install-dependencies-back && npm run build:back",
     "netlify-build": "npm run install-dependencies-front && npm run build:front",
-    "build-storybook": "npm run install-dependencies-front && npm run build:storybook"
+    "build-storybook": "npm run install-dependencies-front && npm run build:storybook",
+    "analyze:front": "cd frontend && npm run build:stats && npx webpack-bundle-analyzer dist/stats.json"
   },
   "repository": {
     "type": "git",
