@@ -10,7 +10,7 @@ describe('AuthService', () => {
   };
   const authStore: any = {
     setLoading: jasmine.createSpy('setLoading').and.callThrough(),
-    update: jasmine.createSpy('update').and.callThrough(),
+    setState: jasmine.createSpy('setState').and.callThrough(),
     setError: jasmine.createSpy('setError').and.callThrough()
   };
 
@@ -39,7 +39,7 @@ describe('AuthService', () => {
       issueIds: []
     });
     expect(httpClient.get).toHaveBeenCalledWith('/assets/data/auth.json');
-    expect(authStore.update).toHaveBeenCalled();
+    expect(authStore.setState).toHaveBeenCalled();
   });
   it('should not be able to login', fakeAsync(() => {
     const data = new Subject();
@@ -48,7 +48,7 @@ describe('AuthService', () => {
       email: '',
       password: '',
     });
-    authStore.update.and.callFake(() => {
+    authStore.setState.and.callFake(() => {
       throw new Error('Something bad happened');
     });
     expect(authStore.setLoading).toHaveBeenCalledWith(true);
