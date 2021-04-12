@@ -8,13 +8,13 @@ export class FilterService {
   constructor(private store: FilterStore) {}
 
   updateSearchTerm(searchTerm: string) {
-    this.store.update({
+    this.store.setState({
       searchTerm
     });
   }
 
   toggleUserId(userId: string) {
-    this.store.update((state) => {
+    this.store.setState((state) => {
       const hasUser = state.userIds.includes(userId);
       const userIds = hasUser
         ? state.userIds.filter((x) => x !== userId)
@@ -27,7 +27,7 @@ export class FilterService {
   }
 
   toggleOnlyMyIssue() {
-    this.store.update((state) => {
+    this.store.setState((state) => {
       const onlyMyIssue = !state.onlyMyIssue;
       return {
         ...state,
@@ -37,7 +37,7 @@ export class FilterService {
   }
 
   toggleIgnoreResolve() {
-    this.store.update((state) => {
+    this.store.setState((state) => {
       const ignoreResolved = !state.ignoreResolved;
       return {
         ...state,
@@ -47,7 +47,7 @@ export class FilterService {
   }
 
   resetAll() {
-    this.store.update((state) => ({
+    this.store.setState((state) => ({
       ...state,
       ...createInitialFilterState()
     }));

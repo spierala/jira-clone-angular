@@ -20,7 +20,7 @@ export class AuthService {
       .get<JUser>(`${this.baseUrl}/auth.json`)
       .pipe(
         map((user) => {
-          this._store.update((state) => ({
+          this._store.setState((state) => ({
             ...state,
             ...user
           }));
