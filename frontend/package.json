@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod=true --sourceMap=true",
-    "build:stats": "ng build --prod=true --named-chunks --stats-json",
+    "build:stats": "npm run build && source-map-explorer dist/**/*.js",
     "test": "ng test",
     "test-cover": "ng test --code-coverage --source-map=false",
     "lint": "ng lint",
@@ -40,8 +40,8 @@
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2",
-    "mini-rx-store": "^2.0.0",
-    "mini-rx-store-ng": "^1.0.0"
+    "mini-rx-store": "^3.0.0-beta.3",
+    "mini-rx-store-ng": "^2.0.0-beta.1"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^10.0.1",
@@ -89,8 +89,7 @@
     "tailwindcss": "^1.4.6",
     "ts-node": "~9.1.1",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.3",
-    "webpack-bundle-analyzer": "^4.4.0"
+    "typescript": "~4.0.3"
   },
   "husky": {
     "hooks": {
